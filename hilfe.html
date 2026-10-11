@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hilfe – Fellchen</title>
+<meta name="description" content="Hilfe und häufige Fragen zur App Fellchen">
+
+<link rel="icon" href="icon.png">
+<style>
+@font-face{font-family:Fredoka;src:url(fonts/Fredoka-Variable.ttf) format('truetype');font-weight:300 700;font-display:swap}
+@font-face{font-family:'Nunito Sans';src:url(fonts/NunitoSans-Variable.ttf) format('truetype');font-weight:200 1000;font-display:swap}
+:root{--sage:#4F7A5B;--sage-dark:#2F4F38;--sage-light:#DDE8DF;--sand:#F6EFE4;--sand-deep:#EFE3D0;--surface:#FFFDF9;--apricot:#F2A65A;--ink:#2E2A24;--muted:#6B6257;--border:#E7DCCB}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.6 'Nunito Sans',system-ui,sans-serif;overflow-x:hidden}
+a{color:var(--sage)}a:hover{color:var(--sage-dark)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:600 22px Fredoka,sans-serif}
+.brand img{width:38px;height:38px;border-radius:10px}
+nav{display:flex;gap:18px;font-size:15px}nav a{text-decoration:none}
+h1,h2,h3{font-family:Fredoka,sans-serif;font-weight:600;line-height:1.12}
+h1{font-size:clamp(34px,6vw,60px);margin:18px 0 16px;letter-spacing:-.5px}
+h2{font-size:clamp(24px,3.2vw,34px);margin:0 0 10px}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:540px;margin:0}
+.badge{display:inline-block;background:var(--sage-light);color:var(--sage-dark);border-radius:999px;padding:6px 14px;font-weight:700;font-size:14px}
+
+/* Start: Text links, Handys rechts – auf dem Handy untereinander */
+.hero{display:grid;grid-template-columns:1fr;gap:36px;align-items:center;padding:18px 0 40px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.store{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--surface);border-radius:14px;padding:10px 16px;font-weight:700;font-size:15px;opacity:.88}
+.store small{display:block;font-weight:600;font-size:11px;opacity:.75;line-height:1}
+.phones{position:relative;height:545px;max-width:420px;width:100%;margin:0 auto}
+.phone{position:absolute;width:236px;border-radius:38px;padding:9px;background:#26231f;box-shadow:0 30px 60px rgba(46,42,36,.22)}
+.phone img{border-radius:30px}
+.phone.front{left:0;top:0;z-index:2}
+.phone.back{right:0;top:44px;transform:rotate(5deg);opacity:.97}
+@media (min-width:900px){
+  .hero{grid-template-columns:1.05fr .95fr;gap:48px;padding:40px 0 70px;min-height:620px}
+  .phones{height:620px;max-width:470px}
+  .phone{width:268px}
+}
+@media (max-width:420px){
+  .phones{height:465px}
+  .phone{width:196px;border-radius:32px;padding:7px}
+  .phone img{border-radius:26px}
+}
+
+.features{display:grid;grid-template-columns:1fr;gap:14px;margin:10px 0 56px}
+@media (min-width:640px){.features{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.features{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--surface);border-radius:22px;padding:22px 24px}
+.features h3{margin:14px 0 6px;font-size:19px}
+.features p{margin:0;color:var(--muted);font-size:15px;line-height:1.5}
+.ico{width:46px;height:46px;border-radius:50%;background:var(--sage-light);color:var(--sage-dark);display:flex;align-items:center;justify-content:center}
+
+.band{background:var(--sage);color:var(--surface);border-radius:28px;padding:34px 28px;display:grid;grid-template-columns:1fr;gap:22px;margin-bottom:56px}
+.band h2{color:var(--surface)}
+.band p{margin:0;opacity:.92}
+.band ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.band li{display:flex;gap:10px;align-items:flex-start}
+.band li:before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--apricot) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E2A24' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat}
+@media (min-width:900px){.band{grid-template-columns:1.1fr 1fr;padding:44px 48px;align-items:center}}
+
+.species{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.species span{background:var(--surface);color:var(--ink);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-weight:700;font-size:14px}
+.contact{text-align:center;margin:0 auto 20px;max-width:620px}
+
+/* Rechtstexte: lesbare Spaltenbreite */
+.legal{max-width:780px;margin:0 auto;padding-bottom:10px}
+.legal .card{padding:8px 28px 26px}
+.legal h2{font-size:21px;margin:26px 0 6px}
+.note{background:#F7D774;color:#4A3A00;border-radius:14px;padding:12px 16px;font-size:15px}
+p.pre{white-space:pre-line;margin:0}
+footer{border-top:1px solid var(--border);margin-top:30px;padding:24px 0 40px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer nav{font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a class="brand" href="./"><img src="icon.png" alt="">Fellchen</a>
+<nav><a href="hilfe.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav>
+</header>
+<div class="legal">
+<h1>Hilfe &amp; häufige Fragen</h1>
+<div class="card">
+<h2>Wo sind meine Daten gespeichert?</h2>
+<p class="pre">Ausschließlich auf deinem Handy. Fellchen hat kein Konto und keinen Server – wir können deine Einträge weder sehen noch wiederherstellen.</p>
+<h2>Wie nehme ich meine Daten auf ein neues Handy mit?</h2>
+<p class="pre">Einstellungen → Sichern &amp; Wiederherstellen → „Sicherung erstellen“. Speichere die Datei z. B. in deiner Cloud oder schick sie dir per Mail. Auf dem neuen Handy: Fellchen installieren → Einstellungen → „Sicherung einlesen“.</p>
+<h2>Ich bekomme keine Erinnerungen.</h2>
+<p class="pre">Prüfe in den Einstellungen deines Handys, ob Mitteilungen für Fellchen erlaubt sind, und in Fellchen unter Einstellungen → Erinnerungen, ob sie eingeschaltet sind. Auf manchen Android-Geräten hilft es, den Energiesparmodus für Fellchen auszuschalten.</p>
+<h2>Wie teile ich den Gesundheitspass mit meiner Tierarztpraxis?</h2>
+<p class="pre">Öffne dein Tier und tippe oben rechts auf das Teilen-Symbol → „Gesundheitspass (PDF)“. Du kannst ihn per Mail, Messenger oder AirDrop verschicken oder ausdrucken.</p>
+<h2>Welche Tiere kann ich eintragen?</h2>
+<p class="pre">Hunde, Katzen, Kaninchen, Meerschweinchen, Pferde und andere Tiere – so viele du möchtest.</p>
+<h2>Ersetzt Fellchen den Tierarzt?</h2>
+<p class="pre">Nein. Fellchen ist ein Notizbuch und Erinnerungshelfer. Es stellt keine Diagnosen und gibt keine Dosierungsempfehlungen.</p>
+<h2>Ich habe einen Fehler gefunden oder eine Idee.</h2>
+<p class="pre">Schreib uns gern an kontakt@fellchen.com – am besten mit Handymodell und kurzer Beschreibung.</p>
+</div></div>
+<footer>
+<div>© 2026 Fellchen · Stand: Oktober 2026</div>
+<nav><a href="./">Start</a><a href="hilfe.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a><a href="mailto:kontakt@fellchen.com">Kontakt</a></nav>
+</footer>
+</div>
+</body>
+</html>
